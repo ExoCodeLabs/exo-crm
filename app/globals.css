@@ -1,0 +1,197 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Light mode - Fluent UI inspired colors */
+    --background: 0 0% 100%;
+    --foreground: 0 0% 13%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 13%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 13%;
+
+    --primary: 206 100% 42%; /* Fluent blue #0078D4 */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 40% 96%; /* Light blue #EFF6FC */
+    --secondary-foreground: 206 100% 42%;
+
+    --accent: 187 100% 38%; /* Teal #00B7C3 */
+    --accent-foreground: 0 0% 100%;
+
+    --muted: 0 0% 96%; /* Light gray #F3F2F1 */
+    --muted-foreground: 0 0% 37%;
+
+    --destructive: 355 93% 49%; /* Red #E81123 */
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 120 77% 27%; /* Green #107C10 */
+    --success-foreground: 0 0% 100%;
+
+    --warning: 45 100% 50%; /* Yellow #FFB900 */
+    --warning-foreground: 10 5% 16%;
+
+    --border: 0 0% 93%;
+    --input: 0 0% 93%;
+    --ring: 206 100% 42%;
+
+    --radius: 0.5rem;
+    --animation-duration: 0.3s;
+  }
+
+  .dark {
+    /* Dark mode - Fluent UI inspired colors */
+    --background: 0 0% 12%; /* #1F1F1F */
+    --foreground: 0 0% 100%;
+
+    --card: 0 0% 17%; /* #2B2B2B */
+    --card-foreground: 0 0% 100%;
+
+    --popover: 0 0% 17%;
+    --popover-foreground: 0 0% 100%;
+
+    --primary: 206 100% 42%; /* Keep Fluent blue #0078D4 */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 0 0% 17%; /* Dark gray #2B2B2B */
+    --secondary-foreground: 0 0% 100%;
+
+    --accent: 187 100% 38%; /* Keep Teal #00B7C3 */
+    --accent-foreground: 0 0% 100%;
+
+    --muted: 0 0% 17%; /* Dark gray #2B2B2B */
+    --muted-foreground: 0 0% 63%;
+
+    --destructive: 355 93% 49%; /* Keep Red #E81123 */
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 120 43% 63%; /* Light Green #76CD76 */
+    --success-foreground: 0 0% 0%;
+
+    --warning: 45 100% 50%; /* Keep Yellow #FFB900 */
+    --warning-foreground: 0 0% 0%;
+
+    --border: 0 0% 27%;
+    --input: 0 0% 27%;
+    --ring: 206 100% 42%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  /* Fluent UI Typography */
+  h1 {
+    @apply text-3xl font-semibold tracking-tight;
+  }
+
+  h2 {
+    @apply text-2xl font-semibold tracking-tight;
+  }
+
+  h3 {
+    @apply text-xl font-semibold tracking-tight;
+  }
+
+  h4 {
+    @apply text-lg font-semibold tracking-tight;
+  }
+
+  p {
+    @apply leading-7;
+  }
+
+  /* Transitions for theme changes */
+  body,
+  button,
+  input,
+  select,
+  textarea,
+  div,
+  a,
+  span,
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: var(--animation-duration);
+  }
+}
+
+/* Custom scrollbar for Fluent UI look */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-muted/50;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-muted-foreground/30 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-muted-foreground/50;
+}
+
+/* Animation classes */
+.animate-fade-in {
+  animation: fadeIn var(--animation-duration) ease-in-out;
+}
+
+.animate-slide-up {
+  animation: slideUp var(--animation-duration) ease-in-out;
+}
+
+.animate-slide-down {
+  animation: slideDown var(--animation-duration) ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
