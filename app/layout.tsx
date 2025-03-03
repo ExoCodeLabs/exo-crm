@@ -9,7 +9,7 @@ const inter = Inter({ subsets: ["latin"] })
 export const metadata: Metadata = {
   title: "Professional CRM | Exo Code Lab",
   description: "A professional CRM template with Redux and reusable components",
-  generator: "Exo CRM",
+    generator: 'v0.dev'
 }
 
 export default function RootLayout({
@@ -26,4 +26,6 @@ export default function RootLayout({
   )
 }
 
-import "./globals.css"
+
+
+import './globals.css'

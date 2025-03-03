@@ -1,4 +1,5 @@
 "use client"
+
 import { useRouter } from "next/navigation"
 import Link from "next/link"
 import { useForm } from "react-hook-form"
@@ -31,8 +32,8 @@ export default function LoginPage() {
 
   const onSubmit = async (data: LoginFormValues) => {
     try {
-      // In a real app, this would call the API
       // For demo purposes, we'll simulate a successful login
+      // In a real app, you would call the API
       // await login(data).unwrap()
 
       toast({

@@ -1,21 +1,11 @@
+"use client"
+
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select"
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Checkbox } from "@/components/ui/checkbox"
 import { Switch } from "@/components/ui/switch"
 import { Badge } from "@/components/ui/badge"
@@ -28,14 +18,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog"
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/components/ui/table"
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
 import { useToast } from "@/components/ui/use-toast"
 
 export default function ComponentsPage() {
@@ -58,9 +41,7 @@ export default function ComponentsPage() {
           <Card>
             <CardHeader>
               <CardTitle>Button Variants</CardTitle>
-              <CardDescription>
-                Different button styles for various actions
-              </CardDescription>
+              <CardDescription>Different button styles for various actions</CardDescription>
             </CardHeader>
             <CardContent className="space-y-6">
               <div className="flex flex-wrap gap-4">
@@ -110,9 +91,7 @@ export default function ComponentsPage() {
           <Card>
             <CardHeader>
               <CardTitle>Form Inputs</CardTitle>
-              <CardDescription>
-                Various input components for forms
-              </CardDescription>
+              <CardDescription>Various input components for forms</CardDescription>
             </CardHeader>
             <CardContent className="space-y-6">
               <div className="space-y-4">
@@ -168,9 +147,7 @@ export default function ComponentsPage() {
           <Card>
             <CardHeader>
               <CardTitle>Modals & Dialogs</CardTitle>
-              <CardDescription>
-                Popup dialogs for user interactions
-              </CardDescription>
+              <CardDescription>Popup dialogs for user interactions</CardDescription>
             </CardHeader>
             <CardContent className="space-y-6">
               <div className="flex flex-wrap gap-4">
@@ -182,8 +159,7 @@ export default function ComponentsPage() {
                     <DialogHeader>
                       <DialogTitle>Edit Profile</DialogTitle>
                       <DialogDescription>
-                        Make changes to your profile here. Click save when
-                        you're done.
+                        Make changes to your profile here. Click save when you're done.
                       </DialogDescription>
                     </DialogHeader>
                     <div className="grid gap-4 py-4">
@@ -231,9 +207,7 @@ export default function ComponentsPage() {
           <Card>
             <CardHeader>
               <CardTitle>Data Tables</CardTitle>
-              <CardDescription>
-                Tables for displaying structured data
-              </CardDescription>
+              <CardDescription>Tables for displaying structured data</CardDescription>
             </CardHeader>
             <CardContent className="space-y-6">
               <Table>
@@ -247,33 +221,15 @@ export default function ComponentsPage() {
                 </TableHeader>
                 <TableBody>
                   {[
-                    {
-                      name: "John Doe",
-                      email: "john@example.com",
-                      status: "Active",
-                    },
-                    {
-                      name: "Jane Smith",
-                      email: "jane@example.com",
-                      status: "Inactive",
-                    },
-                    {
-                      name: "Bob Johnson",
-                      email: "bob@example.com",
-                      status: "Active",
-                    },
+                    { name: "John Doe", email: "john@example.com", status: "Active" },
+                    { name: "Jane Smith", email: "jane@example.com", status: "Inactive" },
+                    { name: "Bob Johnson", email: "bob@example.com", status: "Active" },
                   ].map((user, i) => (
                     <TableRow key={i}>
                       <TableCell className="font-medium">{user.name}</TableCell>
                       <TableCell>{user.email}</TableCell>
                       <TableCell>
-                        <Badge
-                          variant={
-                            user.status === "Active" ? "default" : "secondary"
-                          }
-                        >
-                          {user.status}
-                        </Badge>
+                        <Badge variant={user.status === "Active" ? "default" : "secondary"}>{user.status}</Badge>
                       </TableCell>
                       <TableCell className="text-right">
                         <Button variant="ghost" size="sm">
@@ -316,9 +272,7 @@ export default function ComponentsPage() {
           <Card>
             <CardHeader>
               <CardTitle>Notifications & Toasts</CardTitle>
-              <CardDescription>
-                Alert and notification components
-              </CardDescription>
+              <CardDescription>Alert and notification components</CardDescription>
             </CardHeader>
             <CardContent className="space-y-6">
               <ToastDemo />
@@ -340,14 +294,14 @@ export default function ComponentsPage() {
 
 function MyComponent() {
   const { toast } = useToast()
-
+  
   const showToast = () => {
     toast({
       title: "Success!",
       description: "Your action was completed successfully.",
     })
   }
-
+  
   return <Button onClick={showToast}>Show Toast</Button>
 }`}</code>
                 </pre>
@@ -391,3 +345,4 @@ function ToastDemo() {
     </div>
   )
 }
+
